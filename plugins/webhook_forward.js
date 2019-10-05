@@ -64,7 +64,7 @@ exports.hook_queue = function(next, connection) {
                     fs.open(request_filepath, 'w', function(err, fd) {
                         if(!err) {
                             logger.loginfo("Saving failed webhook request data to "+request_filepath);
-                            fs.write(fd, JSON.stringify(request_options));
+                            fs.write(fd, JSON.stringify(request_options), function() {});
                         } else {
                             logger.logerror("Cannot store failed request, could not open "+request_filepath+" for writing");
                         }
