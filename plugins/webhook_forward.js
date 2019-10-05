@@ -1,5 +1,5 @@
 var logger  = require('./logger');
-var utils   = require('./utils');
+var utils   = require('haraka-utils');
 var request = require('request');
 var fs      = require('fs');
 
